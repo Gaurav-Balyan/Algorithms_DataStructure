@@ -7,6 +7,17 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+    let reversedString = '';
+    reversedString = str.split('').reduce((accumulator, currentValue) => currentValue + accumulator, '');
+    return reversedString === str;
+}
+
+// Have a limitation that it compares every element again after median is reached
+// function palindrome(str) {
+//     return str.split('').every((char, i) => {
+//         return char === str[str.length - i -1];
+//     });
+// }
 
 module.exports = palindrome;
